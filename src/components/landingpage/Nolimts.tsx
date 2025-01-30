@@ -8,7 +8,11 @@ function Nolimts() {
         No limits, no borders.
       </h2>
       <div className="flex justify-center items-center gap-6">
-        <ArrowRight size={48} className="text-[#0063F2] text-3xl xl:text-5xl" />
+        <ArrowRight
+          color="#0063F2"
+          size={48}
+          className="text-[#0063F2] text-3xl xl:text-5xl"
+        />
         <h2 className="text-4xl md:text-5xl xl:text-[64px] text-center font-lugfa text-[#0063F2]">
           Go global.
         </h2>
@@ -166,7 +170,7 @@ function LeftComponent({
 
 function CurrencyConversion() {
   return (
-    <div className="bg-[#F9FAFB] pb-10 lg:pb-10 flex flex-col lg:flex-row gap-5 w-full rounded-3xl px-[45px] pt-[54px]">
+    <div className="bg-[#F9FAFB] pb-10 lg:pb-10 flex flex-col lg:flex-row gap-5 w-full rounded-3xl pt-7 px-7 md:px-[45px] md:pt-9 lg:pt-[54px]">
       <Image
         src={"/landingpage/currency.png"}
         alt="bank"
