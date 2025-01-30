@@ -1,6 +1,5 @@
 import { Facebook, Instagram } from "iconsax-react";
 import { Inbox, Linkedin, Twitter } from "lucide-react";
-import { title } from "process";
 
 const socials = [
   {
