@@ -1,10 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function DeleteAccount() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
-      <div className="relative z-[-1] flex place-items-center mb-8">
-        
+      <div className="relative z-[-1] mb-8 flex place-items-center">
         <Image
           src="/android-chrome-192x192.png"
           width={100}
@@ -22,11 +21,10 @@ export default function DeleteAccount() {
         </li>
         <li>Click on Proceed</li>
       </ul>
-      <p className="text-center max-w-[350px] p-8">
-        If you choose to proceed, you will be logged out immediately and all of
-        your personal information would be purged from our servers. You will not
-        be able to log in anymore and an email would be sent to you when the
-        purge has been completed.
+      <p className="max-w-[350px] p-8 text-center">
+        If you choose to proceed, you will be logged out immediately and all of your personal
+        information would be purged from our servers. You will not be able to log in anymore and an
+        email would be sent to you when the purge has been completed.
       </p>
 
       <div className="text-center">
