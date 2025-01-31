@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="flex flex-col px-4 md:px-10 md:pt-5 lg:flex-row lg:items-center lg:px-20 xl:justify-between xl:px-28">
       <div className="md:w-8/12">
-        <h1 className="inview:animate-slidein inview-once font-lugfa text-4xl font-bold leading-[73px] opacity-0 [--slidein-delay:300ms] md:text-5xl xl:text-[73px]">
+        <h1 className="inview:animate-slidein inview-once font-lugfa text-4xl font-bold opacity-0 [--slidein-delay:300ms] md:text-5xl lg:leading-[73px] xl:text-[73px]">
           Smarter USD banking for Africa&apos;s professionals
         </h1>
         <p className="inview:animate-slidein inview-once mt-4 text-lg font-normal leading-none text-[#98A2B3] opacity-0 [--slidein-delay:500ms] xl:w-10/12 xl:text-lg">

@@ -8,11 +8,11 @@ function Nolimts() {
 
   return (
     <div className="mt-16 lg:mt-[45px]">
-      <h2 className="inview:animate-slidein inview-once text-center font-lugfa text-4xl font-bold opacity-0 [--slidein-delay:300ms] md:text-5xl xl:text-[56px] xl:leading-[61px]">
+      <h2 className="inview:animate-slidein inview-once text-center font-lugfa text-3xl font-bold opacity-0 [--slidein-delay:300ms] md:text-5xl xl:text-[56px] xl:leading-[61px]">
         No limits, no borders.
       </h2>
       <div className="flex items-center justify-center gap-6">
-        <h2 className="inview:animate-slidein inview-once text-center font-lugfa text-5xl font-bold text-[#0063F2] opacity-0 [--slidein-delay:700ms] md:text-5xl xl:text-[64px]">
+        <h2 className="inview:animate-slidein inview-once text-center font-lugfa text-3xl font-bold text-[#0063F2] opacity-0 [--slidein-delay:700ms] md:text-5xl xl:text-[64px]">
           → Go global.
         </h2>
       </div>
