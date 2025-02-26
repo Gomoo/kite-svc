@@ -5,7 +5,7 @@ import GetPaid from "@/components/landingpage/GetPaid";
 import GlobalBank from "@/components/landingpage/GlobalBank";
 import LandingPageHeader from "@/components/landingpage/Header";
 import Possibilities from "@/components/landingpage/Possibilities";
-import TalkToUs from "@/components/landingpage/TalkToUs";
+import TalkToUs, { MobileTalkToUs } from "@/components/landingpage/TalkToUs";
 import { useEffect } from "react";
 import { inViewSensor } from "tailwind-inview";
 
@@ -21,6 +21,7 @@ function LandingPage() {
         <GetPaid />
         <TalkToUs />
       </div>
+      <MobileTalkToUs />
       <Footer />
     </div>
   );

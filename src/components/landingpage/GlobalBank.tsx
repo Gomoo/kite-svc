@@ -30,17 +30,16 @@ function GlobalBank() {
   };
   return (
     <div className="relative pt-[117.95px]">
-      <h3 className="inview-once text-center text-header font-semibold leading-[51px] opacity-0 [--slidein-delay:100ms] inview:animate-slidein">
+      <h3 className="inview-once text-mobileHeader leading-mobileHeader text-center font-semibold opacity-0 [--slidein-delay:100ms] inview:animate-slidein md:text-header md:leading-[51px]">
         A truly global bank for Freelancers
       </h3>
-      <p className="inview-once mx-auto mt-1.5 w-[540px] text-center text-sm leading-[26px] tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
+      <p className="inview-once text-mobileBody mx-auto mt-4 text-center font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
         Kite is designed to meet the global banking needs of individuals,
         providing an efficient way to receive USD payments and easily convert to
         local currency at the best rates.
       </p>
-      <div className="inview-once mx-auto mt-11 flex h-[463px] justify-center gap-4 rounded-[10px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
+      <div className="inview-once mx-auto mt-11 hidden h-[463px] justify-center gap-4 rounded-[10px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:flex">
         {panels.map((panel, index) => {
-          const img = `bg-[url('/images/landingpage/${index + 1}.png')]`;
           return (
             <div
               key={index}
@@ -81,6 +80,52 @@ function GlobalBank() {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-[63px] space-y-12 md:hidden">
+        {panels.map((panel, index) => (
+          <div
+            className={`inview-once opacity-0 inview:animate-slidein`}
+            key={index}
+            style={
+              {
+                "--slidein-delay": `200ms`,
+              } as React.CSSProperties
+            }
+          >
+            <div className="relative h-[354px] w-full overflow-hidden rounded-xl">
+              <img
+                src={panel.image}
+                alt=""
+                className={`h-full w-full object-cover`}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(
+              0deg,
+              rgba(22, 36, 39, 0.9) 0%,
+              rgba(243, 223, 202, 0.36) 51.19%,
+              rgba(248, 225, 228, 0) 100%
+            )`,
+                }}
+              />
+            </div>
+            <div className={`spcae-y-[9px] mt-[17px]`}>
+              <h3
+                className={`text-[15px] font-bold text-black !transition-all duration-500 ease-in-out`}
+              >
+                {panel.title}
+              </h3>
+
+              <p
+                className={`mt-px text-[17px] font-normal text-textTertiary transition-all delay-700`}
+              >
+                {panel.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
       <div className="mx-auto mt-[54px] h-[2px] w-10/12 bg-[#e4e2e1]/40" />
     </div>
