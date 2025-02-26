@@ -7,8 +7,8 @@ function TalkToUs() {
         <div className="flex flex-col space-y-4 pl-6 pt-[87px] md:pl-[60px]">
           <h3 className="text-header leading-header text-white">Talk to us</h3>
           <p className="text-lg leading-body text-white">
-            We’re readily available to attend to all your concerns and ensure
-            you have a great Kite experience.
+            We’re readily available to attend to all your concerns and ensure you have a great Kite
+            experience.
           </p>
           <button className="h-[57px] w-[153px] rounded-full bg-white font-['Geist'] text-xl font-semibold text-black">
             Speak to us
@@ -37,15 +37,15 @@ export function MobileTalkToUs() {
             Talk to us
           </h3>
           <p className="text-mobileBody w-[317px] font-normal leading-body text-white">
-            We&apos;re readily available to attend to all your concerns and
-            ensure you have a great Kite experience.
+            We&apos;re readily available to attend to all your concerns and ensure you have a great
+            Kite experience.
           </p>
           {/* <button className="h-[57px] w-[153px] rounded-full bg-white font-['Geist'] text-xl font-semibold text-black">
             Speak to us
           </button> */}
         </div>
         <Image
-          src={"/images/landingpage/iphone.png"}
+          src={"/images/landingpage/Iphone.png"}
           alt="iphone"
           height={794}
           width={473}
