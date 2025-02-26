@@ -24,10 +24,10 @@ const row4 = [
 function GetPaid() {
   return (
     <div className="relative mx-auto pt-[192px] xl:w-[1024px]">
-      <h3 className="inview-once text-mobileHeader leading-mobileHeader text-center font-medium tracking-[-3%] opacity-0 [--slidein-delay:100ms] inview:animate-slidein md:text-header md:leading-header">
+      <h3 className="inview-once text-center text-mobileHeader font-medium leading-mobileHeader tracking-[-3%] opacity-0 [--slidein-delay:100ms] inview:animate-slidein md:text-header md:leading-header">
         Get Paid Seamlessly, Wherever You Work
       </h3>
-      <p className="inview-once text-mobileBody mx-auto mt-4 w-9/12 text-center font-normal leading-[26px] text-textTertiary opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:w-[425px]">
+      <p className="inview-once mx-auto mt-4 w-9/12 text-center text-mobileBody font-normal leading-[26px] text-textTertiary opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:w-[425px]">
         Receive payments effortlessly from leading freelance and creative
         platforms.
       </p>
@@ -44,7 +44,7 @@ function GetPaid() {
                   alt="get-paid"
                   width={60}
                   height={60}
-                  className={`shrink-0 object-cover object-top grayscale duration-300 ease-in-out hover:grayscale-0`}
+                  className={`shrink-0 rounded-md object-cover object-top duration-300 ease-in-out`}
                 />
               </div>
             ))}
@@ -60,7 +60,7 @@ function GetPaid() {
                   alt="get-paid"
                   width={60}
                   height={60}
-                  className={`shrink-0 object-cover object-top grayscale duration-300 ease-in-out hover:grayscale-0`}
+                  className={`shrink-0 rounded-md object-cover object-top duration-300 ease-in-out`}
                 />
               </div>
             ))}
@@ -85,7 +85,7 @@ function GetPaid() {
                   alt="get-paid"
                   width={60}
                   height={60}
-                  className={`shrink-0 object-cover object-top grayscale duration-300 ease-in-out hover:grayscale-0`}
+                  className={`shrink-0 rounded-md object-cover object-top duration-300 ease-in-out`}
                 />
               </div>
             ))}
@@ -101,7 +101,7 @@ function GetPaid() {
                   alt="get-paid"
                   width={60}
                   height={60}
-                  className={`shrink-0 object-cover object-top grayscale duration-300 ease-in-out hover:grayscale-0`}
+                  className={`shrink-0 rounded-md object-cover object-top duration-300 ease-in-out`}
                 />
               </div>
             ))}

@@ -133,3 +133,34 @@ h6 {
 .footer {
   background: linear-gradient(180deg, #f3f5fa 17.11%, #ffffff 72.58%);
 }
+.box-wrapper {
+  padding: 0;
+}
+
+.box-wrapper--vertical {
+  margin: 0 10px;
+}
+
+.box {
+  /* align-self: center; */
+  /* box-sizing: border-box; */
+  /* height: 40px; */
+  width: 133px;
+}
+
+.box--horizontal {
+  height: 40px;
+}
+
+.box--vertical {
+  min-width: 133px;
+}
+
+@media (min-width: 960px) {
+  .box--horizontal {
+    height: 40px;
+  }
+  .box--vertical {
+    min-width: 190px;
+  }
+}

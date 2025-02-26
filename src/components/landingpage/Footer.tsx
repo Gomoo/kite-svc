@@ -27,10 +27,6 @@ const socials = [
 const link1 = [
   {
     link: "/",
-    title: "Feautres",
-  },
-  {
-    link: "/",
     title: "USD Savings",
   },
   {
@@ -120,22 +116,33 @@ function Footer() {
                     height={18}
                     alt="social"
                     className="inview-once object-contain opacity-0 inview:animate-slidein"
-                    style={{ "--slidein-delay": `${(index + 1) * 100}ms` } as any}
+                    style={
+                      { "--slidein-delay": `${(index + 1) * 100}ms` } as any
+                    }
                   />
                 </a>
               ))}
             </div>
           </div>
           <div className="inview-once ml-28 flex flex-col space-y-8 opacity-0 [--slidein-delay:300ms] inview:animate-slidein xl:ml-[255px]">
+            <p className="font-normal text-textSecondary">Features</p>
             {link1.map((link, index) => (
-              <a href={link.link} key={index} className="font-normal text-textPrimary">
+              <a
+                href={link.link}
+                key={index}
+                className="font-normal text-textPrimary"
+              >
                 {link.title}
               </a>
             ))}
           </div>
           <div className="inview-once ml-[44px] flex flex-col space-y-8 pt-[52.3px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
             {link2.map((link, index) => (
-              <a href={link.link} key={index} className="font-normal text-textPrimary">
+              <a
+                href={link.link}
+                key={index}
+                className="font-normal text-textPrimary"
+              >
                 {link.title}
               </a>
             ))}
@@ -155,7 +162,11 @@ function Footer() {
             <div className="col-span-1">
               <div className="inview-once flex flex-col space-y-2 opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
                 {link3.map((link, index) => (
-                  <a href={link.link} key={index} className="text-[13px] font-normal text-gray-500">
+                  <a
+                    href={link.link}
+                    key={index}
+                    className="text-[13px] font-normal text-gray-500"
+                  >
                     {link.title}
                   </a>
                 ))}
@@ -165,7 +176,11 @@ function Footer() {
               {" "}
               <div className="inview-once flex flex-col space-y-2 opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
                 {link4.map((link, index) => (
-                  <a href={link.link} key={index} className="text-[13px] font-normal text-gray-500">
+                  <a
+                    href={link.link}
+                    key={index}
+                    className="text-[13px] font-normal text-gray-500"
+                  >
                     {link.title}
                   </a>
                 ))}
@@ -183,7 +198,7 @@ function Footer() {
         <h6 className="inview-once mt-2.5 text-xs font-normal text-gray-400 opacity-0 [--slidein-delay:1000ms] inview:animate-slidein">
           © 2025 Kite
         </h6>
-        <div className="inview-once mt-4 flex gap-[30px] opacity-0 [--slidein-delay:1000ms] inview:animate-slidein">
+        <div className="mt-4 flex gap-[30px]">
           {socials.map((social, index) => (
             <a href={social.link} key={index}>
               <Image

@@ -15,6 +15,7 @@ export default LandingPageHeader;
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolledBg, setIsScrolledBg] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,11 @@ function Navbar() {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+      if (window.scrollY > 670) {
+        setIsScrolledBg(true);
+      } else {
+        setIsScrolledBg(false);
       }
     };
 
@@ -34,7 +40,13 @@ function Navbar() {
 
   return (
     <div
-      className={`inview-once container fixed top-[50px] z-50 mx-auto flex h-[58px] items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein md:top-3 md:w-11/12 lg:w-10/12 ${isScrolled ? "px-[5.1%]" : "!px-[5.1%] lg:!px-[12.1%]"}`}
+      className={`inview-once container fixed top-[30px] z-50 mx-auto flex h-[58px] items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein md:top-3 md:w-11/12 lg:w-10/12 ${
+        isScrolled
+          ? "px-[5.1%]" // Styles after scrolling 200px
+          : "!px-[5.1%] lg:!px-[12.1%]" // Default styles
+      } ${
+        isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px]" // Styles after scrolling 700px
+      } `}
     >
       <Image
         src="/images/logo.png"

@@ -1,25 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const panels = [
   {
     image: "/images/landingpage/1.png",
     title: "Freelancers",
     description:
-      "Kite is designed to meet the global banking needs of individuals, providing an efficient way to receive USD payments and easily convert to local currency at the best rates.",
+      "Get paid seamlessly in USD and convert to your local currency anytime.",
   },
   {
     image: "/images/landingpage/2.png",
     title: "Remote Workers",
-    description:
-      "Kite is designed to meet the global banking needs of individuals, providing an efficient way to receive USD payments and easily convert to local currency at the best rates.",
+    description: "Receive your salary in USD with ease, no hidden fees.",
   },
   {
     image: "/images/landingpage/3.png",
     title: "Digital Nomads",
     description:
-      "Kite is designed to meet the global banking needs of individuals, providing an efficient way to receive USD payments and easily convert to local currency at the best rates.",
+      "A global banking system that moves with you, wherever you go.",
   },
 ];
 
@@ -28,12 +27,26 @@ function GlobalBank() {
   const handleClick = (index: number) => {
     setExpandedIndex(index);
   };
+
+  const title = ["Freelancers", "Remote Workers", "Digital Nomads"];
+  useEffect(() => {
+    setInterval(() => {
+      if (expandedIndex === 2) {
+        return setExpandedIndex(0);
+      } else {
+        return setExpandedIndex(expandedIndex + 1);
+      }
+    }, 7000);
+  }, [expandedIndex]);
   return (
     <div className="relative pt-[117.95px]">
-      <h3 className="inview-once text-mobileHeader leading-mobileHeader text-center font-semibold opacity-0 [--slidein-delay:100ms] inview:animate-slidein md:text-header md:leading-[51px]">
-        A truly global bank for Freelancers
+      <h3 className="inview-once hidden text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:block md:text-header md:leading-[51px]">
+        A truly global bank for {title[expandedIndex]}
       </h3>
-      <p className="inview-once text-mobileBody mx-auto mt-4 text-center font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
+      <h3 className="inview-once text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:hidden md:text-header md:leading-[51px]">
+        A truly global bank for {title[expandedIndex]}
+      </h3>
+      <p className="inview-once mx-auto mt-4 text-center text-mobileBody font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
         Kite is designed to meet the global banking needs of individuals,
         providing an efficient way to receive USD payments and easily convert to
         local currency at the best rates.
