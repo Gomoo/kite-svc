@@ -50,7 +50,7 @@ function GetPaid() {
             ))}
           </div>
           <div className="flex h-full shrink-0 justify-between md:block md:w-[100px] md:space-y-2.5">
-            {row1.map((image, index) => (
+            {row2.map((image, index) => (
               <div
                 key={index}
                 className="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-2xl bg-gray-100 md:w-full"
@@ -75,7 +75,7 @@ function GetPaid() {
             />
           </div>
           <div className="flex h-full shrink-0 justify-between md:block md:w-[100px] md:space-y-2.5">
-            {row1.map((image, index) => (
+            {row3.map((image, index) => (
               <div
                 key={index}
                 className="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-2xl bg-gray-100 md:w-full"
@@ -91,7 +91,7 @@ function GetPaid() {
             ))}
           </div>
           <div className="flex h-full shrink-0 justify-between md:block md:w-[100px] md:space-y-2.5">
-            {row1.map((image, index) => (
+            {row4.map((image, index) => (
               <div
                 key={index}
                 className="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-2xl bg-gray-100 md:w-full"
