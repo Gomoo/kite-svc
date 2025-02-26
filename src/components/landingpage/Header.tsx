@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 function LandingPageHeader() {
   return (
@@ -25,30 +25,24 @@ function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <div
-      className={`inview-once lg"w-10/12 container fixed top-3 z-50 mx-auto flex h-[58px] w-11/12 items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein ${isScrolled ? "lg:px-[6%]" : "!px-[5.1%] lg:!px-[12.1%]"}`}
+      className={`inview-once lg"w-10/12 container fixed top-3 z-50 mx-auto flex h-[58px] w-11/12 items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein ${isScrolled ? 'lg:px-[6%]' : '!px-[5.1%] lg:!px-[12.1%]'}`}
     >
-      <Image
-        src="/images/logo.png"
-        width={74}
-        height={44}
-        alt="logo"
-        className=""
-      />
+      <Image src="/images/logo.png" width={74} height={44} alt="logo" className="" />
 
       <button
         className={`flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ${
           isScrolled
-            ? "bg-orange text-white" // Styles after scrolling 200px
-            : "text-orbg-orange bg-white" // Default styles
+            ? 'bg-orange text-white' // Styles after scrolling 200px
+            : 'text-orbg-orange bg-white' // Default styles
         }`}
       >
         Download
@@ -65,8 +59,7 @@ function Content() {
           The Super App for Global Banking
         </h1>
         <p className="inview-once text-center text-sm font-normal leading-[26px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
-          Open a US dollar bank account and start sending, receiving, and saving
-          money in minutes.
+          Open a US dollar bank account and start sending, receiving, and saving money in minutes.
         </p>
       </div>
       <button className="inview-once mt-4 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
@@ -90,7 +83,7 @@ function Content() {
         </div>
       </button>
       <Image
-        src="/images/landingpage/iphone.png"
+        src="/images/landingpage/iphonee.png"
         alt="phone"
         width={429.51}
         height={721}

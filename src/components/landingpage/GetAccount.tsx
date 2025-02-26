@@ -1,29 +1,28 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const sections = [
   {
-    title: "Create an account",
+    title: 'Create an account',
     description:
-      "With your email address, you can easily create your Kite account from the app on either the App store or Play Store.",
-    icon: "/images/landingpage/Calendar.svg",
+      'With your email address, you can easily create your Kite account from the app on either the App store or Play Store.',
+    icon: '/images/landingpage/Calendar.svg',
     image: null,
-    bg: "#f8f7f8",
+    bg: '#f8f7f8',
   },
   {
-    title: "Complete verification",
-    description:
-      "Submit all requested documents to complete your verification process.",
-    icon: "/images/landingpage/Calendar.svg",
+    title: 'Complete verification',
+    description: 'Submit all requested documents to complete your verification process.',
+    icon: '/images/landingpage/Calendar.svg',
     image: null,
-    bg: "#fff7f2",
+    bg: '#fff7f2',
   },
   {
-    title: "Request a USD account",
+    title: 'Request a USD account',
     description:
-      "Once verification is done, simply request for your USD account and start making global payments.",
-    icon: "/images/landingpage/Calendar.svg",
-    image: "/images/landingpage/iphone.png",
-    bg: "#E8F2FF",
+      'Once verification is done, simply request for your USD account and start making global payments.',
+    icon: '/images/landingpage/Calendar.svg',
+    image: '/images/landingpage/iphonee.png',
+    bg: '#E8F2FF',
   },
 ];
 
@@ -42,7 +41,7 @@ function GetAccount() {
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`rounded-[20px] duration-700 ease-in-out hover:scale-[1.03] ${index === 2 ? "col-span-2 flex flex-row justify-between lg:h-[404px] lg:flex-row" : "col-span-2 h-[404px] md:col-span-1"} relative`}
+            className={`rounded-[20px] duration-700 ease-in-out hover:scale-[1.03] ${index === 2 ? 'col-span-2 flex flex-row justify-between lg:h-[404px] lg:flex-row' : 'col-span-2 h-[404px] md:col-span-1'} relative`}
             style={
               {
                 background: section.bg,
@@ -61,14 +60,12 @@ function GetAccount() {
                 {section.title}
               </h4>
               <p
-                className={`mt-[15px] text-[20.11px] font-normal leading-[33px] tracking-[0%] text-textSecondary md:h-[130px] lg:h-[99px] ${index === 2 ? "md:w-[304px] lg:w-[424px]" : ""} `}
+                className={`mt-[15px] text-[20.11px] font-normal leading-[33px] tracking-[0%] text-textSecondary md:h-[130px] lg:h-[99px] ${index === 2 ? 'md:w-[304px] lg:w-[424px]' : ''} `}
               >
                 {section.description}
               </p>
               <button className="mt-4 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white">
-                <h3 className="text-xl !font-semibold text-orange">
-                  Download App
-                </h3>
+                <h3 className="text-xl !font-semibold text-orange">Download App</h3>
                 <div className="flex gap-3">
                   <Image
                     src="/images/landingpage/ios.png"
