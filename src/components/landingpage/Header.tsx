@@ -1,44 +1,102 @@
-import Image from 'next/image';
-import React from 'react';
-import StoreButton from './StoreButton';
+"use client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-function Header() {
+function LandingPageHeader() {
   return (
-    <div className="flex flex-col px-4 md:px-10 md:pt-5 lg:flex-row lg:items-center lg:px-20 xl:justify-between xl:px-28">
-      <div className="md:w-8/12">
-        <h1 className="inview:animate-slidein inview-once font-lugfa text-4xl font-bold opacity-0 [--slidein-delay:300ms] md:text-5xl lg:leading-[73px] xl:text-[73px]">
-          Smarter USD banking for Africa&apos;s professionals
-        </h1>
-        <p className="inview:animate-slidein inview-once mt-4 text-lg font-normal leading-none text-[#98A2B3] opacity-0 [--slidein-delay:500ms] xl:w-10/12 xl:text-lg">
-          Easily open a free USD bank account in your name for global collections and payouts. Get
-          the Kite app and access seamless payment solutions.
-        </p>
-        <StoreButton />
-        {/* <div className="mt-10 hidden items-center gap-5 md:mt-5 md:flex xl:w-11/12">
-          <Image
-            src="/landingpage/avatars.png"
-            alt="avatars"
-            width={150}
-            height={40}
-            className="shrink-0 lg:h-[55px] lg:w-[138px]"
-          />
-          <p className="text-sm font-normal leading-tight text-[#9e9e9e] xl:text-base">
-            Trusted and loved by freelancers from Andela, Fiverr and more who use our services for
-            more convenient payments.
-          </p>
-        </div> */}
-      </div>
-      <div className="inview:animate-slidein inview-once flex justify-center pt-[43px] opacity-0 [--slidein-delay:700ms] lg:w-1/2 lg:justify-end">
-        <Image
-          src={'/landingpage/Body.png'}
-          alt="mobile-phone"
-          width={359}
-          height={740}
-          className="shrink-0 lg:h-[500px] lg:w-[359px] lg:object-contain xl:h-[650px] xl:object-contain"
-        />
-      </div>
+    <div className="h-[675px] w-full overflow-hidden bg-[url('/images/landingpage/header.png')] bg-cover pt-3">
+      <Navbar />
+      <Content />
     </div>
   );
 }
 
-export default Header;
+export default LandingPageHeader;
+
+function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`inview-once lg"w-10/12 container fixed top-3 z-50 mx-auto flex h-[58px] w-11/12 items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein ${isScrolled ? "lg:px-[6%]" : "!px-[5.1%] lg:!px-[12.1%]"}`}
+    >
+      <Image
+        src="/images/logo.png"
+        width={74}
+        height={44}
+        alt="logo"
+        className=""
+      />
+
+      <button
+        className={`flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ${
+          isScrolled
+            ? "bg-orange text-white" // Styles after scrolling 200px
+            : "text-orbg-orange bg-white" // Default styles
+        }`}
+      >
+        Download
+      </button>
+    </div>
+  );
+}
+
+function Content() {
+  return (
+    <div className="mt-[88px] flex flex-col items-center justify-center">
+      <div className="w-[388px] space-y-2.5">
+        <h1 className="inview-once text-center font-['Geist'] text-[44px] font-semibold leading-[51px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
+          The Super App for Global Banking
+        </h1>
+        <p className="inview-once text-center text-sm font-normal leading-[26px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
+          Open a US dollar bank account and start sending, receiving, and saving
+          money in minutes.
+        </p>
+      </div>
+      <button className="inview-once mt-4 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
+        <h3 className="text-xl !font-semibold text-orange">Download App</h3>
+        <div className="flex gap-3">
+          <Image
+            src="/images/landingpage/ios.png"
+            width={22.58}
+            height={22.58}
+            alt="ios"
+            className="shrink-0 object-contain"
+          />
+          <div className="h-7 w-[0.8px] bg-[#d9d9d9]" />
+          <Image
+            src="/images/landingpage/android.png"
+            width={22.58}
+            height={22.58}
+            alt="android"
+            className="shrink-0 object-contain"
+          />
+        </div>
+      </button>
+      <Image
+        src="/images/landingpage/iphone.png"
+        alt="phone"
+        width={429.51}
+        height={721}
+        className="object-contain"
+        priority
+      />
+    </div>
+  );
+}

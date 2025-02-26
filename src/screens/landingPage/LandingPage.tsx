@@ -1,20 +1,26 @@
-import Footer from '@/components/landingpage/Footer';
-import ForeignAccount from '@/components/landingpage/ForeignAccount';
-import GetPaidFast from '@/components/landingpage/GetPaidFast';
-import Header from '@/components/landingpage/Header';
-import Nav from '@/components/landingpage/Nav';
-import Nolimts from '@/components/landingpage/Nolimts';
-import Stats from '@/components/landingpage/Stats';
+"use client";
+import Footer from "@/components/landingpage/Footer";
+import GetAccount from "@/components/landingpage/GetAccount";
+import GetPaid from "@/components/landingpage/GetPaid";
+import GlobalBank from "@/components/landingpage/GlobalBank";
+import LandingPageHeader from "@/components/landingpage/Header";
+import Possibilities from "@/components/landingpage/Possibilities";
+import TalkToUs from "@/components/landingpage/TalkToUs";
+import { useEffect } from "react";
+import { inViewSensor } from "tailwind-inview";
 
 function LandingPage() {
+  useEffect(inViewSensor, []);
   return (
-    <div className="">
-      <Nav />
-      <Header />
-      <Stats />
-      <Nolimts />
-      <ForeignAccount />
-      <GetPaidFast />
+    <div className="relative">
+      <LandingPageHeader />
+      <div className="mx-auto w-11/12 xl:w-10/12">
+        <GlobalBank />
+        <Possibilities />
+        <GetAccount />
+        <GetPaid />
+        <TalkToUs />
+      </div>
       <Footer />
     </div>
   );

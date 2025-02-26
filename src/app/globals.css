@@ -2,6 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Open Runde";
+  src: url("/fonts/open-runde/OpenRunde-Regular-BF64ee9c6978988.woff")
+    format("woff");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("/fonts/open-runde/OpenRunde-Medium-BF64ee9c695513a.woff")
+    format("woff");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("/fonts/open-runde/OpenRunde-Semibold-BF64ee9c69788f3.woff")
+    format("woff");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("/fonts/open-runde/OpenRunde-Bold-BF64ee9c696534f.woff")
+    format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/static/Geist-Light.ttf") format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/static/Geist-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/static/Geist-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/static/Geist-SemiBold.ttf") format("truetype");
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,95 +77,59 @@
 }
 
 body {
-  color: #171717;
+  color: #525252;
   background: #fff;
-  @apply font-lugfa font-[500];
+  font-family: "Open Runde";
+  font-weight: 300;
+  letter-spacing: -0.22px;
 }
 
-.zero {
-  font-family: Lufga;
-  font-size: 72px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Geist";
   font-weight: 600;
-  line-height: 93.97px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  background: rgba(255, 255, 255, 1);
+  color: #171717;
+  letter-spacing: -3%;
 }
 
-.foreign__card {
-  position: relative;
-  padding: 48px 40px 48px 40px;
-  border-radius: 24px;
-  border-image-source: linear-gradient(121.91deg, #ffffff 0%, rgba(153, 153, 153, 0) 111.4%);
-  background: linear-gradient(140.33deg, #0a1e3a 13.02%, #001430 103.61%);
-}
-
-.foreign__card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 24px;
-  padding: 1px; /* Control border width */
-
-  background: linear-gradient(121.91deg, #ffffff 0%, #001430 111.4%);
-  /* background: linear-gradient(140.33deg, #0A1E3A 13.02%, #001430 103.61%); */
-
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.steps_blur {
-  background: rgba(8, 28, 56, 1);
-  backdrop-filter: blur(80px);
-}
-
-.header__store__btn {
-  @apply flex w-full items-center justify-center gap-2.5 rounded-md bg-[#141414] px-6 py-3.5 text-white md:w-auto md:rounded-md;
-}
-
-.header__storewhite__btn {
-  @apply flex shrink-0 items-center gap-2.5 rounded-full bg-white px-6 py-2.5 text-[#141414] md:py-3.5;
-}
-
-.stats__big__text {
-  @apply text-center font-lugfa text-sm font-[500] text-[#fff] md:!text-3xl xl:!text-3xl;
-}
-
-.stats__small__text {
-  @apply text-center font-lugfa !text-[9px] font-[400] text-[#fff] md:!text-lg xl:!text-base;
-}
-
-.heading-3 {
-  @apply text-3xl font-bold text-[#1b1f28] md:text-[52.8px] md:leading-[52.8px] xl:w-[450px];
-}
-
-.no__limit__caption {
-  @apply font-lugfa tracking-[2px] xl:text-base;
-}
-
-.body-text {
-  @apply font-inter mt-5 text-xl font-normal leading-[32px] text-[#505050];
+.global__slide {
+  background-color: linear-gradient(
+    180deg,
+    rgba(22, 36, 39, 0.9) 0%,
+    rgba(243, 223, 202, 0.36) 51.19%,
+    rgba(248, 225, 228, 0) 100%
+  ) !important;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+
+  /* .animate__slide {
+    @apply inview:animate-slidein inview-once opacity-0 [--slidein-delay:100ms];
+  } */
   /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.footer {
+  background: linear-gradient(180deg, #f3f5fa 17.11%, #ffffff 72.58%);
 }
