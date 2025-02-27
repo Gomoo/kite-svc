@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-// @ts-ignore
-import { HorizontalTicker } from "react-infinite-ticker";
-import Image from "next/image";
-import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 const images = [
   "/images/landingpage/Frame1.svg",
@@ -16,28 +13,16 @@ const images = [
 ];
 
 function TickerComp() {
-  const [duration, setDuration] = useState(15000);
-  const [delay, setDelay] = useState(0);
-  const [easing, setEasing] = useState("linear");
-  const [reverse, setReverse] = useState(false);
-
   return (
-    <div className="mb-10 mt-[60px] flex h-20 w-screen items-center bg-gray-100">
-      <HorizontalTicker
-        duration={duration}
-        easing={easing}
-        delay={delay}
-        reverse={reverse}
-      >
+    <Marquee className="mb-10 mt-[60px] h-20 bg-gray-100">
+      <div className="flex gap-7">
         {images.map((img, index) => (
-          <div className="box-wrapper box-wrapper--vertical" key={index}>
-            <div className="box relative !h-10 shrink-0 overflow-hidden">
-              <img src={img} alt="country" className="!h-full object-contain" />
-            </div>
+          <div key={index} className="relative flex !h-10 shrink-0">
+            <img src={img} alt="country" className="!h-full object-contain" />
           </div>
         ))}
-      </HorizontalTicker>
-    </div>
+      </div>
+    </Marquee>
   );
 }
 
