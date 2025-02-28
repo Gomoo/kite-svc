@@ -3,23 +3,23 @@ import Image from "next/image";
 
 const socials = [
   {
-    link: "/",
+    link: "https://www.facebook.com/profile.php?id=61572986044137",
     icon: "/images/landingpage/facebook.png",
   },
   {
-    link: "/",
+    link: "https://x.com/UseKitehq?t=xJ9OJrnxNM0ps_b4156NzA&s=09",
     icon: "/images/landingpage/twitter.png",
   },
   {
-    link: "/",
+    link: "https://www.instagram.com/usekitehq?igsh=MTE1c2JuczlveHozNg==",
     icon: "/images/landingpage/instagram.png",
   },
   {
-    link: "/",
+    link: "https://www.linkedin.com/company/usekite/",
     icon: "/images/landingpage/linkedin-2.png",
   },
   {
-    link: "/",
+    link: "https://medium.com/@usekitehq",
     icon: "/images/landingpage/ic_medium.png",
   },
 ];
@@ -109,7 +109,12 @@ function Footer() {
             />
             <div className="flex gap-[30px]">
               {socials.map((social, index) => (
-                <a href={social.link} key={index}>
+                <a
+                  href={social.link}
+                  key={index}
+                  target="_blank"
+                  rel="noopener noreferrer  "
+                >
                   <Image
                     src={social.icon}
                     width={18}
@@ -200,7 +205,12 @@ function Footer() {
         </h6>
         <div className="mt-4 flex gap-[30px]">
           {socials.map((social, index) => (
-            <a href={social.link} key={index}>
+            <a
+              href={social.link}
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer "
+            >
               <Image
                 src={social.icon}
                 width={18}
