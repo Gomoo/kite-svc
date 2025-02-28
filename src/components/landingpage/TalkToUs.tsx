@@ -15,7 +15,7 @@ function TalkToUs() {
           </button>
         </div>
         <Image
-          src={"/images/landingpage/iphone.png"}
+          src={"/images/landingpage/Iphone.png"}
           alt="iphone"
           height={794}
           width={473}
