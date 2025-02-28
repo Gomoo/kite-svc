@@ -45,8 +45,8 @@ export function MobileTalkToUs() {
           </button> */}
         </div>
         <Image
-          src={"/images/landingpage/Iphone.png"}
           alt="iphone"
+          src={"/images/landingpage/Iphone.png"}
           height={794}
           width={473}
           className="mt-8 shrink-0"
