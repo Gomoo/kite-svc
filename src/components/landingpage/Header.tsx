@@ -105,7 +105,7 @@ function Content() {
         </div>
       </button>
       <Image
-        src="/images/landingpage/iphone.png"
+        src="/images/landingpage/Iphone.png"
         alt="phone"
         width={429.51}
         height={721}
