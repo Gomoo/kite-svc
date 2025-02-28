@@ -138,7 +138,7 @@ function GetPaid() {
           ></div>
         </div> */}
       </div>
-      <div className="mt-[46px] !hidden md:block">
+      <div className="mt-[46px] hidden md:block">
         <div className="inview-once relative mx-auto flex w-[322.67px] flex-col justify-center gap-[30px] overflow-hidden rounded-[20px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:h-[323px] md:w-full md:flex-row md:gap-[11px]">
           <Row1 />
           <Row2 />

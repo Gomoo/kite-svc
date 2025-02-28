@@ -109,7 +109,7 @@ function Content() {
         alt="phone"
         width={429.51}
         height={721}
-        className="hidden object-contain md:block"
+        className="!mt-3 hidden object-contain md:block"
         priority
       />
     </div>
