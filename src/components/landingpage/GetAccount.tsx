@@ -24,7 +24,7 @@ const sections = [
     description:
       "Once verification is done, simply request for your USD account and start making global payments.",
     icon: "/images/landingpage/CurrencyDollar.png",
-    image: "/images/landingpage/iphone.png",
+    image: "/images/landingpage/Iphone.png",
     bg: "#E8F2FF",
   },
 ];
