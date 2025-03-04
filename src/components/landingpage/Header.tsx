@@ -42,7 +42,7 @@ function Navbar() {
 
   return (
     <div
-      className={`inview-once container fixed top-[30px] z-50 mx-auto flex h-[58px] items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein md:top-3 md:w-11/12 lg:w-10/12 ${
+      className={`inview-once container fixed top-[30px] z-50 mx-auto flex h-[58px] items-center justify-between opacity-0 transition-all duration-500 [--slidein-delay:100ms] inview:animate-slidein md:top-3 md:w-11/12 lg:w-11/12 ${
         isScrolled
           ? "px-[5.1%]" // Styles after scrolling 200px
           : "!px-[5.1%] lg:!px-[12.1%]" // Default styles
@@ -50,13 +50,15 @@ function Navbar() {
         isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px]" // Styles after scrolling 700px
       } `}
     >
-      <Image
-        src="/images/logo.png"
-        width={74}
-        height={44}
-        alt="logo"
-        // className="bg-white"
-      />
+      <a href="/">
+        <Image
+          src="/images/logo.png"
+          width={74}
+          height={44}
+          alt="logo"
+          // className="bg-white"
+        />
+      </a>
 
       <button
         className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${

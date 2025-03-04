@@ -132,13 +132,13 @@ function Footer() {
           <div className="inview-once ml-28 flex flex-col space-y-8 opacity-0 [--slidein-delay:300ms] inview:animate-slidein xl:ml-[255px]">
             <p className="font-normal text-textSecondary">Features</p>
             {link1.map((link, index) => (
-              <a
-                href={link.link}
+              <p
+                // href={link.link}
                 key={index}
                 className="font-normal text-textPrimary"
               >
                 {link.title}
-              </a>
+              </p>
             ))}
           </div>
           <div className="inview-once ml-[44px] flex flex-col space-y-8 pt-[52.3px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
@@ -154,9 +154,19 @@ function Footer() {
           </div>
         </div>
         <div className="inview-once mt-[50px] h-[2px] w-full bg-gray-100 opacity-0 [--slidein-delay:700ms] inview:animate-slidein" />
-        <h6 className="inview-once mt-[30px] font-normal opacity-0 [--slidein-delay:1000ms] inview:animate-slidein">
-          © 2025 Kite
-        </h6>
+        <div className="flex justify-between">
+          <h6 className="inview-once mt-[30px] font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
+            © 2025 Kite
+          </h6>
+          <div className="mt-[30px] flex items-center gap-3">
+            <a href="/privacy-policy" className="text-base">
+              Privacy Policy
+            </a>
+            <a href="/delete-account" className="text-base">
+              Delete Account
+            </a>
+          </div>
+        </div>
       </div>
       <div className="px-6 pb-[131px] pt-7 md:hidden">
         <div className="">
