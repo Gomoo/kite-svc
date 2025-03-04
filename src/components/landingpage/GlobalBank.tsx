@@ -30,21 +30,29 @@ function GlobalBank() {
 
   const title = ["Freelancers", "Remote Workers", "Digital Nomads"];
   useEffect(() => {
-    setInterval(() => {
-      if (expandedIndex === 2) {
-        return setExpandedIndex(0);
-      } else {
-        return setExpandedIndex(expandedIndex + 1);
-      }
-    }, 7000);
+    let timeoutId: NodeJS.Timeout;
+
+    const startTimeout = () => {
+      timeoutId = setTimeout(() => {
+        setExpandedIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
+        startTimeout(); // Recursively start the timeout again
+      }, 7000);
+    };
+
+    startTimeout();
+
+    return () => {
+      clearTimeout(timeoutId); // Clear the timeout when the component unmounts or when expandedIndex changes
+    };
   }, [expandedIndex]);
+
   return (
     <div className="relative pt-[117.95px]">
       <h3 className="inview-once hidden text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:block md:text-header md:leading-[51px]">
-        A Truly Global Bank For {title[expandedIndex]}
+        A truly global bank for {title[expandedIndex]}
       </h3>
       <h3 className="inview-once text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:hidden md:text-header md:leading-[51px]">
-        A Truly Global Bank For {title[expandedIndex]}
+        A truly global bank for {title[expandedIndex]}
       </h3>
       <p className="inview-once mx-auto mt-4 text-center text-mobileBody font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
         Kite is designed to meet the global banking needs of individuals,

@@ -19,6 +19,7 @@ function LandingPage() {
         <GlobalBank />
       </div>
       <Ticker />
+
       <div className="mx-auto w-11/12 xl:w-10/12">
         <Possibilities />
         <GetAccount />

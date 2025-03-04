@@ -1,3 +1,5 @@
+"use client";
+import useIsAppleDevice from "@/hooks/useIsApple";
 import Image from "next/image";
 
 const sections = [
@@ -22,18 +24,20 @@ const sections = [
     description:
       "Once verification is done, simply request for your USD account and start making global payments.",
     icon: "/images/landingpage/CurrencyDollar.png",
-    image: "/images/landingpage/Iphone.png",
+    image: "/images/landingpage/iphone.png",
     bg: "#E8F2FF",
   },
 ];
 
 function GetAccount() {
+  const { storeLink } = useIsAppleDevice();
+
   return (
     <div className="relative mx-auto pt-20 xl:w-[1024px]">
-      <p className="inview-once text-mobileBody text-center font-semibold leading-[26px] text-textSecondary [--slidein-delay:100ms] inview:animate-slidein md:text-sm">
+      <p className="inview-once text-center text-mobileBody font-semibold leading-[26px] text-textSecondary [--slidein-delay:100ms] inview:animate-slidein md:text-sm">
         HOW IT WORKS
       </p>
-      <h3 className="inview-once text-mobileHeader leading-mobileHeader mt-2.5 text-center font-semibold opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:text-header md:font-medium md:leading-header">
+      <h3 className="inview-once mt-2.5 text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:text-header md:font-medium md:leading-header">
         Get a USD Account in 3 Easy Steps
       </h3>
       <div
@@ -65,29 +69,33 @@ function GetAccount() {
               >
                 {section.description}
               </p>
-              <button className="mt-4 flex h-12 w-[266px] items-center justify-center gap-3 rounded-full bg-white md:h-[57px]">
-                <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
-                  Download <span className="hidden md:inline">App</span>
-                  <span className="inline md:hidden">on mobile</span>
-                </h3>
-                <div className="flex gap-3">
-                  <div className="h-7 w-[0.8px] bg-[#d9d9d9] md:hidden" />
-                  <Image
-                    src="/images/landingpage/ios.png"
-                    width={22.58}
-                    height={22.58}
-                    alt="ios"
-                    className="shrink-0 object-contain"
-                  />
-                  <div className="hidden h-7 w-[0.8px] bg-[#d9d9d9] md:block" />
-                  <Image
-                    src="/images/landingpage/android.png"
-                    width={22.58}
-                    height={22.58}
-                    alt="android"
-                    className="shrink-0 object-contain"
-                  />
-                </div>
+              <button className="inview-once mt-7 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 transition-colors duration-500 ease-in-out [--slidein-delay:500ms] hover:border hover:border-orange inview:animate-slidein md:mt-4">
+                <a
+                  href={storeLink}
+                  className="flex h-full w-full items-center justify-center gap-3"
+                >
+                  <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
+                    Download <span className="hidden md:inline">App</span>
+                    <span className="inline md:hidden">on mobile</span>
+                  </h3>
+                  <div className="hidden gap-3 md:flex">
+                    <Image
+                      src="/images/landingpage/ios.png"
+                      width={22.58}
+                      height={22.58}
+                      alt="ios"
+                      className="shrink-0 object-contain"
+                    />
+                    <div className="h-7 w-[0.8px] bg-[#d9d9d9]" />
+                    <Image
+                      src="/images/landingpage/android.png"
+                      width={22.58}
+                      height={22.58}
+                      alt="android"
+                      className="shrink-0 object-contain"
+                    />
+                  </div>
+                </a>
               </button>
             </div>
             {section.image && (

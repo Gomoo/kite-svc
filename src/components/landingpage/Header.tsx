@@ -1,4 +1,5 @@
 "use client";
+import useIsAppleDevice from "@/hooks/useIsApple";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,6 +17,7 @@ export default LandingPageHeader;
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolledBg, setIsScrolledBg] = useState(false);
+  const { storeLink } = useIsAppleDevice();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,19 +59,24 @@ function Navbar() {
       />
 
       <button
-        className={`flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ${
-          isScrolled
-            ? "bg-orange text-white" // Styles after scrolling 200px
-            : "text-orbg-orange bg-white" // Default styles
+        className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${
+          isScrolled ? "bg-orange text-white" : "text-orbg-orange bg-white"
         }`}
       >
-        Download
+        <a
+          href={storeLink}
+          className={`flex h-full w-full items-center justify-center ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-orange"} `}
+        >
+          Download
+        </a>
       </button>
     </div>
   );
 }
 
 function Content() {
+  const { storeLink } = useIsAppleDevice();
+
   return (
     <div className="mt-44 flex flex-col items-center justify-center md:mt-[88px]">
       <div className="w-[388px] space-y-5 md:space-y-2.5">
@@ -81,31 +88,36 @@ function Content() {
           money in minutes.
         </p>
       </div>
-      <button className="inview-once mt-7 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:mt-4">
-        <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
-          Download <span className="hidden md:inline">App</span>
-          <span className="inline md:hidden">on mobile</span>
-        </h3>
-        <div className="hidden gap-3 md:flex">
-          <Image
-            src="/images/landingpage/ios.png"
-            width={22.58}
-            height={22.58}
-            alt="ios"
-            className="shrink-0 object-contain"
-          />
-          <div className="h-7 w-[0.8px] bg-[#d9d9d9]" />
-          <Image
-            src="/images/landingpage/android.png"
-            width={22.58}
-            height={22.58}
-            alt="android"
-            className="shrink-0 object-contain"
-          />
-        </div>
+      <button className="inview-once mt-7 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 transition-colors duration-500 ease-in-out [--slidein-delay:500ms] hover:border hover:border-orange inview:animate-slidein md:mt-4">
+        <a
+          href={storeLink}
+          className="flex h-full w-full items-center justify-center gap-3"
+        >
+          <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
+            Download <span className="hidden md:inline">App</span>
+            <span className="inline md:hidden">on mobile</span>
+          </h3>
+          <div className="hidden gap-3 md:flex">
+            <Image
+              src="/images/landingpage/ios.png"
+              width={22.58}
+              height={22.58}
+              alt="ios"
+              className="shrink-0 object-contain"
+            />
+            <div className="h-7 w-[0.8px] bg-[#d9d9d9]" />
+            <Image
+              src="/images/landingpage/android.png"
+              width={22.58}
+              height={22.58}
+              alt="android"
+              className="shrink-0 object-contain"
+            />
+          </div>
+        </a>
       </button>
       <Image
-        src="/images/landingpage/Iphone.png"
+        src="/images/landingpage/iphone.png"
         alt="phone"
         width={429.51}
         height={721}
