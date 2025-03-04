@@ -158,7 +158,7 @@ function Footer() {
           <h6 className="inview-once mt-[30px] font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
             © 2025 Kite
           </h6>
-          <div className="mt-[30px] flex items-center gap-3">
+          <div className="mt-[30px] flex items-center gap-3 inview-once font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
             <a href="/privacy-policy" className="text-base">
               Privacy Policy
             </a>
