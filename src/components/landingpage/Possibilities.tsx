@@ -54,7 +54,7 @@ function Possibilities() {
   return (
     <div className="mx-auto pb-[78px] pt-[101px] xl:w-[1024px] xl:px-[94px]">
       <h3 className="inview-once text-center text-mobileHeader !font-medium leading-[57.2px] opacity-0 [--slidein-delay:100ms] inview:animate-slidein md:text-header">
-        Sky-high Possibilities
+        Sky-High Possibilities
       </h3>
       <p className="inview-once mx-auto mt-4 w-9/12 text-center text-mobileBody font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
         All your global banking needs in one super app.
