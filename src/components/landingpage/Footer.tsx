@@ -158,7 +158,7 @@ function Footer() {
           <h6 className="inview-once mt-[30px] font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
             © 2025 Kite
           </h6>
-          <div className="mt-[30px] flex items-center gap-3 inview-once font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
+          <div className="inview-once mt-[30px] flex items-center gap-3 font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
             <a href="/privacy-policy" className="text-base">
               Privacy Policy
             </a>
@@ -177,13 +177,13 @@ function Footer() {
             <div className="col-span-1">
               <div className="inview-once flex flex-col space-y-2 opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
                 {link3.map((link, index) => (
-                  <a
-                    href={link.link}
+                  <p
+                    // href={link.link}
                     key={index}
                     className="text-[13px] font-normal text-gray-500"
                   >
                     {link.title}
-                  </a>
+                  </p>
                 ))}
               </div>
             </div>
@@ -191,14 +191,22 @@ function Footer() {
               {" "}
               <div className="inview-once flex flex-col space-y-2 opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
                 {link4.map((link, index) => (
-                  <a
-                    href={link.link}
+                  <p
+                    // href={link.link}
                     key={index}
                     className="text-[13px] font-normal text-gray-500"
                   >
                     {link.title}
-                  </a>
+                  </p>
                 ))}
+              </div>
+              <div className="inview-once mt-2 flex flex-col gap-2 font-normal opacity-0 [--slidein-delay:300ms] inview:animate-slidein">
+                <a href="/privacy-policy" className="text-[13px] text-gray-500">
+                  Privacy Policy
+                </a>
+                <a href="/delete-account" className="text-[13px] text-gray-500">
+                  Delete Account
+                </a>
               </div>
             </div>
           </div>

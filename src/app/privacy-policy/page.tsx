@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <main className="flex min-h-screen flex-col p-24">
+    <main className="flex min-h-screen flex-col px-10 py-24">
       <h2 className="font-bold">Privacy Policy</h2>
 
       <p className="mb-4">
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
       <p className="mb-4">
         This policy is incorporated into and a material term of your
         registration and/or use of our products and services, including our
-       Application &quot;Kite&quot;. By using the Application or Services, you
+        Application &quot;Kite&quot;. By using the Application or Services, you
         consent to the practices set forth in this Privacy Policy.
       </p>
 
@@ -41,18 +41,18 @@ export default function PrivacyPolicy() {
       <h6 className="font-bold">Information You Provide to Us</h6>
       <p className="mb-4">
         We collect information from you when you choose to provide it to us
-        through the Application or through any other means. This may include when you
-        create an account on the Application, register or request products or services,
-        request information from us, sign up for newsletters or our email lists,
-        use our Site, or otherwise contact us. The information we collect may
-        include your name, address, email address, telephone or mobile phone
-        number, information relating to your employment or professional
-        activities and financial account information. You may be required to
-        provide certain personal and/or business information to apply for and
-        receive our products services.
+        through the Application or through any other means. This may include
+        when you create an account on the Application, register or request
+        products or services, request information from us, sign up for
+        newsletters or our email lists, use our Site, or otherwise contact us.
+        The information we collect may include your name, address, email
+        address, telephone or mobile phone number, information relating to your
+        employment or professional activities and financial account information.
+        You may be required to provide certain personal and/or business
+        information to apply for and receive our products services.
       </p>
 
-      <h6 className="font-bold" >Information We Automatically Collect</h6>
+      <h6 className="font-bold">Information We Automatically Collect</h6>
 
       <p className="mb-4">
         We may automatically collect certain information when you use our
@@ -65,9 +65,9 @@ export default function PrivacyPolicy() {
         brand, operating system, software version, and Internet Protocol (“IP”)
         address. We also may collect information about your use of the
         Application, including the date and time of access, the areas or pages
-        that you visit, the amount of time you spend using the Application, the number
-        of times you return, whether you open, forward, or click-through emails,
-        and other Site usage data.
+        that you visit, the amount of time you spend using the Application, the
+        number of times you return, whether you open, forward, or click-through
+        emails, and other Site usage data.
       </p>
 
       <h5 className="font-bold">HOW WE USE INFORMATION WE COLLECT</h5>
@@ -78,18 +78,18 @@ export default function PrivacyPolicy() {
         connection with the reason for which it was provided. For instance, if
         you contact us by email, we will use the personal data you provide to
         answer your question or resolve your problem. Also, if you provide
-        personal data in order to obtain access to the Application or Services, we will
-        use your personal data to provide you with access to such services and
-        to monitor your use of such services. We may also use your personal data
-        and other personally non-identifiable information collected through the
-        Site or the provision of the Services to help us improve the content and
-        functionality of the Application or the Services, to better understand our
-        users and to improve the Application and the Services. We may use this
-        information to contact you in the future to tell you about services we
-        believe will be of interest to you. If at any time you wish not to
-        receive any future marketing communications or you wish to have your
-        name deleted from our mailing lists, please contact us as indicated
-        below.
+        personal data in order to obtain access to the Application or Services,
+        we will use your personal data to provide you with access to such
+        services and to monitor your use of such services. We may also use your
+        personal data and other personally non-identifiable information
+        collected through the Site or the provision of the Services to help us
+        improve the content and functionality of the Application or the
+        Services, to better understand our users and to improve the Application
+        and the Services. We may use this information to contact you in the
+        future to tell you about services we believe will be of interest to you.
+        If at any time you wish not to receive any future marketing
+        communications or you wish to have your name deleted from our mailing
+        lists, please contact us as indicated below.
       </p>
 
       <h5 className="font-bold">SHARING OF INFORMATION WE COLLECT</h5>
@@ -132,8 +132,8 @@ export default function PrivacyPolicy() {
         good faith belief that such action is necessary to (i) comply with a
         legal obligation, (ii) protect and defend our rights or property, (iii)
         act in urgent circumstances to protect the personal safety of users of
-        the Application, the Services or the public, or (iv) protect against legal
-        liability
+        the Application, the Services or the public, or (iv) protect against
+        legal liability
       </p>
 
       <h4 className="font-bold">CHILDREN AND MINORS</h4>
@@ -144,9 +144,9 @@ export default function PrivacyPolicy() {
         monitor their children’s Internet usage and to help enforce our Privacy
         Policy by instructing their children never to provide personal data
         without their permission. If you have reason to believe that a minor
-        under the age of 18 has provided personal data to us through the Application or
-        the Services, please contact us, and we will endeavor to delete that
-        information from our databases.
+        under the age of 18 has provided personal data to us through the
+        Application or the Services, please contact us, and we will endeavor to
+        delete that information from our databases.
       </p>
 
       <h4 className="font-bold">DATA SECURITY</h4>
