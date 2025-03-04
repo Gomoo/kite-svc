@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <main className="flex min-h-screen flex-col px-10 py-24">
+    <main className="flex min-h-screen flex-col px-10 py-24 md:px-20 lg:px-40">
       <h2 className="font-bold">Privacy Policy</h2>
 
       <p className="mb-4">
