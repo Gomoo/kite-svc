@@ -26,7 +26,7 @@ function Navbar() {
       } else {
         setIsScrolled(false);
       }
-      if (window.scrollY > 670) {
+      if (window.scrollY > 370) {
         setIsScrolledBg(true);
       } else {
         setIsScrolledBg(false);
