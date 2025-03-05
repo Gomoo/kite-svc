@@ -1,6 +1,8 @@
 "use client";
 import useIsAppleDevice from "@/hooks/useIsApple";
+import Link from "next/link";
 import Image from "next/image";
+
 import { useEffect, useState } from "react";
 
 function LandingPageHeader() {
@@ -50,7 +52,7 @@ function Navbar() {
         isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px]" // Styles after scrolling 700px
       } `}
     >
-      <a href="/">
+      <Link href="/">
         <Image
           src="/images/logo.png"
           width={74}
@@ -58,7 +60,7 @@ function Navbar() {
           alt="logo"
           // className="bg-white"
         />
-      </a>
+      </Link>
 
       <button
         className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${
@@ -123,8 +125,9 @@ function Content() {
         alt="phone"
         width={429.51}
         height={721}
-        className="!mt-3 hidden object-contain md:block"
+        className="!mt-3 hidden object-contain md:block inview-once opacity-0 [--slidein-delay:300ms] inview:animate-slidein"
         priority
+        
       />
     </div>
   );
