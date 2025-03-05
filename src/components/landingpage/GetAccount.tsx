@@ -75,10 +75,10 @@ function GetAccount() {
                   className="flex h-full w-full items-center justify-center gap-3"
                 >
                   <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
-                    Download <span className="hidden md:inline">App</span>
-                    <span className="inline md:hidden">on mobile</span>
+                    Download <span className="inline">App</span>
+                    {/* <span className="inline md:hidden">on mobile</span> */}
                   </h3>
-                  <div className="hidden gap-3 md:flex">
+                  <div className="flex gap-3">
                     <Image
                       src="/images/landingpage/ios.png"
                       width={22.58}
