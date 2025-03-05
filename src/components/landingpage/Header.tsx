@@ -34,7 +34,7 @@ function Navbar() {
       } else {
         setIsScrolledBg(false);
       }
-      if (window.scrollY > 1070) {
+      if (window.scrollY > 370) {
         setIsScrolledBgDesktop(true);
       } else {
         setIsScrolledBgDesktop(false);
