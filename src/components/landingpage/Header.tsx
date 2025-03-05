@@ -19,6 +19,7 @@ export default LandingPageHeader;
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolledBg, setIsScrolledBg] = useState(false);
+  const [isScrolledBgDesktop, setIsScrolledBgDesktop] = useState(false);
   const { storeLink } = useIsAppleDevice();
 
   useEffect(() => {
@@ -28,10 +29,15 @@ function Navbar() {
       } else {
         setIsScrolled(false);
       }
-      if (window.scrollY > 370) {
+      if (window.scrollY > 10) {
         setIsScrolledBg(true);
       } else {
         setIsScrolledBg(false);
+      }
+      if (window.scrollY > 1070) {
+        setIsScrolledBgDesktop(true);
+      } else {
+        setIsScrolledBgDesktop(false);
       }
     };
 
@@ -49,7 +55,10 @@ function Navbar() {
           ? "px-[5.1%]" // Styles after scrolling 200px
           : "!px-[5.1%] lg:!px-[12.1%]" // Default styles
       } ${
-        isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px]" // Styles after scrolling 700px
+        isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px] md:bg-transparent" // Styles after scrolling 700px
+      } ${
+        isScrolledBgDesktop &&
+        "!top-0 h-[80px] bg-white md:h-[58px] md:bg-white"
       } `}
     >
       <Link href="/">
@@ -125,9 +134,8 @@ function Content() {
         alt="phone"
         width={429.51}
         height={721}
-        className="!mt-3 hidden object-contain md:block inview-once opacity-0 [--slidein-delay:300ms] inview:animate-slidein"
+        className="inview-once !mt-3 hidden object-contain opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:block"
         priority
-        
       />
     </div>
   );
