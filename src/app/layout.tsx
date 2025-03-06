@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="'GTM-MQD3GK9P" />
+      <GoogleTagManager gtmId="GTM-MQD3GK9P" />
       <body className={`no-scrollbar`}>
         <LandingPageHeader />
         {children}
