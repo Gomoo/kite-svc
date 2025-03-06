@@ -6,7 +6,7 @@ import Footer from "@/components/landingpage/Footer";
 
 export const metadata: Metadata = {
   title: "Kite App",
-  description: " Convert your Stablecoins (USDC, USDT) to Naira and Dollars.",
+  description: `Open a USD account in minutes with Kite. Send and receive funds globally and manage multiple currencies—all in one place.`,
 };
 
 export default function RootLayout({
