@@ -17,13 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-MQD3GK9P" />
       <GoogleAnalytics/>
       <body className={`no-scrollbar`}>
         <LandingPageHeader />
         {children}
         <Footer />
       </body>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
     </html>
   );
 }
