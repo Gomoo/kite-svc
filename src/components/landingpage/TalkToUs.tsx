@@ -12,7 +12,7 @@ function TalkToUs() {
           </p>
           <button className="h-[57px] w-[153px] rounded-full bg-white font-['Geist'] text-xl font-semibold text-black">
             <a
-              href="mailto:support@scalepad.co"
+              href="mailto:support@usekite.co"
               target="_blank"
               rel="noreferrer noopener"
               className="h-full w-full"
@@ -49,7 +49,7 @@ export function MobileTalkToUs() {
           </p>
           <button className="h-[57px] w-[153px] rounded-full bg-white font-['Geist'] text-xl font-semibold text-black">
             <a
-              href="mailto:support@scalepad.co"
+              href="mailto:support@usekite.co"
               target="_blank"
               rel="noreferrer noopener"
               className="h-full w-full"
