@@ -3,7 +3,7 @@ import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import LandingPageHeader from "@/components/landingpage/Header";
 import Footer from "@/components/landingpage/Footer";
-import GoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
 
 export const metadata: Metadata = {
   title: "Kite App",
@@ -17,7 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics/>
       <body className={`no-scrollbar`}>
         <LandingPageHeader />
         {children}
