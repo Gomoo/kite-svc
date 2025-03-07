@@ -13,13 +13,13 @@ const GoogleAnalytics = () => {
     // @ts-ignore
     gtag('js', new Date());
     // @ts-ignore
-    gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
+    gtag('config', "G-9ET789RPSE");
   }, []);
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-9ET789RPSE`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -27,7 +27,7 @@ const GoogleAnalytics = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+          gtag('config', 'G-9ET789RPSE');
         `}
       </Script>
     </>
