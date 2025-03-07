@@ -16,12 +16,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId={"GTM-MQD3GK9P"} />
       <body className={`no-scrollbar`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MQD3GK9P"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <LandingPageHeader />
         {children}
         <Footer />
       </body>
-      <GoogleTagManager gtmId={"GTM-MQD3GK9P"} />
     </html>
   );
 }
