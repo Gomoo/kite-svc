@@ -6,8 +6,7 @@ const panels = [
   {
     image: "/images/landingpage/1.png",
     title: "Freelancers",
-    description:
-      "Get paid seamlessly in USD and convert to your local currency anytime.",
+    description: "Get paid seamlessly in USD and convert to your local currency anytime.",
   },
   {
     image: "/images/landingpage/2.png",
@@ -17,8 +16,7 @@ const panels = [
   {
     image: "/images/landingpage/3.png",
     title: "Digital Nomads",
-    description:
-      "A global banking system that moves with you, wherever you go.",
+    description: "A global banking system that moves with you, wherever you go.",
   },
 ];
 
@@ -36,7 +34,7 @@ function GlobalBank() {
       timeoutId = setTimeout(() => {
         setExpandedIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
         startTimeout(); // Recursively start the timeout again
-      }, 7000);
+      }, 2500);
     };
 
     startTimeout();
@@ -49,15 +47,14 @@ function GlobalBank() {
   return (
     <div className="relative pt-[117.95px]">
       <h3 className="inview-once hidden text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:block md:text-header md:leading-[51px]">
-        A Truly Global Bank For {title[expandedIndex]}
+        A Truly Global Bank For <span className="text-orange">{title[expandedIndex]}</span>
       </h3>
       <h3 className="inview-once text-center text-mobileHeader font-semibold leading-mobileHeader opacity-0 ease-in-out [--slidein-delay:100ms] inview:animate-slidein md:hidden md:text-header md:leading-[51px]">
-        A Truly Global Bank For {title[expandedIndex]}
+        A Truly Global Bank For <span className="text-orange">{title[expandedIndex]}</span>
       </h3>
       <p className="inview-once mx-auto mt-4 text-center text-mobileBody font-normal leading-body tracking-[-0.22px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:mt-1.5 md:w-[540px] md:text-sm">
-        Kite is designed to meet the global banking needs of individuals,
-        providing an efficient way to receive USD payments and easily convert to
-        local currency at the best rates.
+        Kite is designed to meet the global banking needs of individuals, providing an efficient way
+        to receive USD payments and easily convert to local currency at the best rates.
       </p>
       <div className="inview-once mx-auto mt-11 hidden h-[463px] justify-center gap-4 rounded-[10px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:flex">
         {panels.map((panel, index) => {
@@ -115,11 +112,7 @@ function GlobalBank() {
             }
           >
             <div className="relative h-[354px] w-full overflow-hidden rounded-xl">
-              <img
-                src={panel.image}
-                alt=""
-                className={`h-full w-full object-cover`}
-              />
+              <img src={panel.image} alt="" className={`h-full w-full object-cover`} />
               <div
                 className="absolute inset-0"
                 style={{
