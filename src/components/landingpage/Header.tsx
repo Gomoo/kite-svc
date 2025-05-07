@@ -71,8 +71,8 @@ function Navbar() {
 
       <div className={`flex items-center gap-3`}>
         <button
-          className={`group flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-full bg-white font-['Geist'] text-sm font-semibold transition-all duration-100 ease-in-out md:w-fit md:px-3 ${
-            isScrolled ? "bg-black md:border md:border-green-500 md:bg-white" : ""
+          className={`group flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-100 ease-in-out md:w-fit md:px-3 ${
+            isScrolled ? "bg-black md:border md:border-green-500 md:bg-white" : "bg-white"
           }`}
         >
           <a
