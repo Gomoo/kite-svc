@@ -2,7 +2,7 @@
 import useIsAppleDevice from "@/hooks/useIsApple";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function LandingPageHeader() {
@@ -71,28 +71,39 @@ function Navbar() {
 
       <div className={`flex items-center gap-3`}>
         <button
-          className={`group flex h-[32px] items-center justify-center rounded-full bg-white font-['Geist'] text-sm font-semibold transition-all duration-100 ease-in-out hover:border hover:border-green-500`}
+          className={`group flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-full bg-white font-['Geist'] text-sm font-semibold transition-all duration-100 ease-in-out hover:border hover:border-green-500 md:w-fit ${
+            isScrolled ? "bg-black md:bg-white" : ""
+          }`}
         >
           <a
             href={whatsapplink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex h-full w-full items-center justify-center gap-2 px-3 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
+            className={`flex h-full w-full items-center justify-center gap-2 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
           >
-            <Image alt="whatsapp" src={"/images/whatsapp.png"} height={20} width={20} />
-            Chat with us
+            <Image
+              alt="whatsapp"
+              src={"/images/whatsapp.png"}
+              height={20}
+              width={20}
+              className="h-4 w-4 shrink-0 md:h-5 md:w-5"
+            />
+            <span className="hidden md:block">Chat with us</span>
           </a>
         </button>
         <button
-          className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${
-            isScrolled ? "bg-orange text-white" : "text-orbg-orange bg-white"
+          className={`group flex h-[32px] w-[32px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange md:w-[115px] ${
+            isScrolled
+              ? "bg-black text-orange md:bg-orange md:text-white"
+              : "text-orbg-orange bg-white"
           }`}
         >
           <a
             href={storeLink}
             className={`flex h-full w-full items-center justify-center ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-orange"} `}
           >
-            Download
+            <Download className="md:hidden" size={16} />
+            <span className="hidden md:block">Download</span>
           </a>
         </button>
       </div>
