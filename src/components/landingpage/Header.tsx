@@ -21,6 +21,7 @@ function Navbar() {
   const [isScrolledBg, setIsScrolledBg] = useState(false);
   const [isScrolledBgDesktop, setIsScrolledBgDesktop] = useState(false);
   const { storeLink } = useIsAppleDevice();
+  const whatsapplink = "https://wa.me/2349126671174";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,14 +57,11 @@ function Navbar() {
           : "!px-[5.1%] lg:!px-[12.1%]" // Default styles
       } ${
         isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px] md:bg-transparent" // Styles after scrolling 700px
-      } ${
-        isScrolledBgDesktop &&
-        "!top-0 h-[80px] bg-white md:h-[58px] md:bg-white"
-      } `}
+      } ${isScrolledBgDesktop && "!top-0 h-[80px] bg-white md:h-[58px] md:bg-white"} `}
     >
       <Link href="/">
         <Image
-          src="/images/logo.png"
+          src="/images/logo.svg"
           width={74}
           height={44}
           alt="logo"
@@ -71,18 +69,33 @@ function Navbar() {
         />
       </Link>
 
-      <button
-        className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${
-          isScrolled ? "bg-orange text-white" : "text-orbg-orange bg-white"
-        }`}
-      >
-        <a
-          href={storeLink}
-          className={`flex h-full w-full items-center justify-center ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-orange"} `}
+      <div className={`flex items-center gap-3`}>
+        <button
+          className={`group flex h-[32px] items-center justify-center rounded-full bg-white font-['Geist'] text-sm font-semibold transition-all duration-100 ease-in-out hover:border hover:border-green-500`}
         >
-          Download
-        </a>
-      </button>
+          <a
+            href={whatsapplink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex h-full w-full items-center justify-center gap-2 px-3 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
+          >
+            <Image alt="whatsapp" src={"/images/whatsapp.png"} height={20} width={20} />
+            Chat with us
+          </a>
+        </button>
+        <button
+          className={`group flex h-[32px] w-[115px] items-center justify-center rounded-full font-['Geist'] text-sm font-semibold transition-all duration-300 ease-in-out hover:border hover:border-orange ${
+            isScrolled ? "bg-orange text-white" : "text-orbg-orange bg-white"
+          }`}
+        >
+          <a
+            href={storeLink}
+            className={`flex h-full w-full items-center justify-center ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-orange"} `}
+          >
+            Download
+          </a>
+        </button>
+      </div>
     </div>
   );
 }
@@ -97,15 +110,11 @@ function Content() {
           The Super App for Global Banking
         </h1>
         <p className="inview-once mx-auto w-9/12 text-center text-[17px] font-normal leading-[26px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:w-auto md:text-sm">
-          Open a US dollar bank account and start sending, receiving, and saving
-          money in minutes.
+          Open a US dollar bank account and start sending, receiving, and saving money in minutes.
         </p>
       </div>
       <button className="inview-once mt-7 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 transition-colors duration-500 ease-in-out [--slidein-delay:500ms] hover:border hover:border-orange inview:animate-slidein md:mt-4">
-        <a
-          href={storeLink}
-          className="flex h-full w-full items-center justify-center gap-3"
-        >
+        <a href={storeLink} className="flex h-full w-full items-center justify-center gap-3">
           <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
             Download <span className="hidden md:inline">App</span>
             {/* <span className="inline md:hidden">on mobile</span> */}
@@ -132,8 +141,8 @@ function Content() {
       <Image
         src="/images/landingpage/Iphone.png"
         alt="phone"
-        width={429.51}
-        height={721}
+        width={350.51}
+        height={700}
         className="inview-once !mt-3 hidden object-contain opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:block"
         priority
       />

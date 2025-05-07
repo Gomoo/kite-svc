@@ -30,11 +30,10 @@ function GetPaid() {
         Get Paid Seamlessly, Wherever You Work
       </h3>
       <p className="inview-once mx-auto mt-4 w-9/12 text-center text-mobileBody font-normal leading-[26px] text-textTertiary opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:w-[425px]">
-        Receive payments effortlessly from leading freelance and creative
-        platforms.
+        Receive payments effortlessly from leading freelance and creative platforms.
       </p>
       <div className="mt-[46px] md:hidden">
-        <div className="inview-once mx-auto flex w-[322.67px] flex-col justify-center gap-[30px] rounded-[20px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:h-[323px] md:w-full md:flex-row md:gap-[11px]">
+        <div className="inview-once mx-auto flex w-11/12 flex-col justify-center gap-[30px] rounded-[20px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:h-[323px] md:w-full md:flex-row md:gap-[11px]">
           <Marquee className="">
             <div className="flex h-full shrink-0 justify-between space-x-2.5 md:block md:w-[100px] md:space-x-0 md:space-y-2.5">
               {row1.map((image, index) => (
@@ -72,9 +71,9 @@ function GetPaid() {
             </div>
           </Marquee>
 
-          <div className="flex h-[322.67px] w-[322.67px] items-center justify-center rounded-2xl bg-gray-100 md:h-full">
+          <div className="flex h-[322.67px] w-full items-center justify-center rounded-2xl bg-gray-100 md:h-full">
             <Image
-              src={"/images/landingpage/logo.png"}
+              src={"/images/logo2.svg"}
               alt="get-paid"
               width={214}
               height={215}
@@ -144,7 +143,7 @@ function GetPaid() {
           <Row2 />
           <div className="flex h-[322.67px] w-[322.67px] items-center justify-center rounded-2xl bg-gray-100 md:h-full">
             <Image
-              src={"/images/landingpage/logo.png"}
+              src={"/images/logo2.svg"}
               alt="get-paid"
               width={214}
               height={215}

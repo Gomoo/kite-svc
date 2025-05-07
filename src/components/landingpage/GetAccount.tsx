@@ -13,8 +13,7 @@ const sections = [
   },
   {
     title: "Complete verification",
-    description:
-      "Submit all requested documents to complete your verification process.",
+    description: "Submit all requested documents to complete your verification process.",
     icon: "/images/landingpage/IdentificationCard.png",
     image: null,
     bg: "#fff7f2",
@@ -104,7 +103,7 @@ function GetAccount() {
                 alt="iphone"
                 height={794}
                 width={473}
-                className="mx-auto mt-auto hidden h-auto w-[390px] shrink-0 object-contain md:block lg:w-[473px]"
+                className="mx-auto mt-auto hidden h-auto w-[390px] shrink-0 object-contain md:block lg:w-[350px]"
               />
             )}
           </div>
