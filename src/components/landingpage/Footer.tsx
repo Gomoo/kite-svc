@@ -101,7 +101,7 @@ function Footer() {
         <div className="h-[240px flex">
           <div className="space-y-[69px]">
             <Image
-              src={"/images/logo.png"}
+              src={"/images/logo.svg"}
               alt="logo"
               className="inview-once opacity-0 [--slidein-delay:100ms] inview:animate-slidein"
               width={74}
@@ -109,21 +109,14 @@ function Footer() {
             />
             <div className="flex gap-[30px]">
               {socials.map((social, index) => (
-                <a
-                  href={social.link}
-                  key={index}
-                  target="_blank"
-                  rel="noopener noreferrer  "
-                >
+                <a href={social.link} key={index} target="_blank" rel="noopener noreferrer  ">
                   <Image
                     src={social.icon}
                     width={18}
                     height={18}
                     alt="social"
                     className="inview-once object-contain opacity-0 inview:animate-slidein"
-                    style={
-                      { "--slidein-delay": `${(index + 1) * 100}ms` } as any
-                    }
+                    style={{ "--slidein-delay": `${(index + 1) * 100}ms` } as any}
                   />
                 </a>
               ))}
@@ -143,11 +136,7 @@ function Footer() {
           </div>
           <div className="inview-once ml-[44px] flex flex-col space-y-8 pt-[52.3px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein">
             {link2.map((link, index) => (
-              <a
-                href={link.link}
-                key={index}
-                className="font-normal text-textPrimary"
-              >
+              <a href={link.link} key={index} className="font-normal text-textPrimary">
                 {link.title}
               </a>
             ))}
@@ -212,7 +201,7 @@ function Footer() {
           </div>
         </div>
         <Image
-          src={"/images/logo.png"}
+          src={"/images/logo.svg"}
           alt="logo"
           className="inview-once mt-10 opacity-0 [--slidein-delay:300ms] inview:animate-slidein"
           width={74}
@@ -223,12 +212,7 @@ function Footer() {
         </h6>
         <div className="mt-4 flex gap-[30px]">
           {socials.map((social, index) => (
-            <a
-              href={social.link}
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer "
-            >
+            <a href={social.link} key={index} target="_blank" rel="noopener noreferrer ">
               <Image
                 src={social.icon}
                 width={18}
