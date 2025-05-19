@@ -29,6 +29,11 @@ export default function RootLayout({
         <LandingPageHeader />
         {children}
         <Footer />
+        <script
+          async
+          type="text/javascript"
+          src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Yn9kQw"
+        ></script>
       </body>
     </html>
   );
