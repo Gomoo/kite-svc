@@ -1,20 +1,23 @@
 "use client";
 import useIsAppleDevice from "@/hooks/useIsApple";
-import Link from "next/link";
-import Image from "next/image";
+import { Widget } from "@typeform/embed-react";
 import { Download } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-function LandingPageHeader() {
+function Business() {
   return (
-    <div className="relative h-[572px] overflow-hidden bg-[url('/images/landingpage/header.png')] bg-cover pt-3 md:h-[675px]">
+    <div className="bg-white">
       <Navbar />
-      <Content />
+      <div className="relative h-screen">
+        <Widget id="w9NIVr8N" className="h-full" />
+      </div>
     </div>
   );
 }
 
-export default LandingPageHeader;
+export default Business;
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,7 +60,7 @@ function Navbar() {
           : "!px-[5.1%] lg:!px-[12.1%]" // Default styles
       } ${
         isScrolledBg && "!top-0 h-[80px] bg-white md:h-[58px] md:bg-transparent" // Styles after scrolling 700px
-      } ${isScrolledBgDesktop && "!top-0 h-[80px] bg-white md:h-[58px] md:bg-white"} `}
+      } ${isScrolledBgDesktop && "!top-0 h-[80px] bg-white md:h-[58px]"} `}
     >
       <Link href="/">
         <Image
@@ -79,14 +82,14 @@ function Navbar() {
             href={whatsapplink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex h-full w-full items-center justify-center gap-2 px-3 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
+            className={`flex h-full w-full items-center justify-center gap-2 md:px-3 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
           >
             <Image
               alt="whatsapp"
               src={"/images/whatsapp.png"}
               height={20}
               width={20}
-              className="h-4 w-4 shrink-0 md:h-5 md:w-5"
+              className="h-4 w-4 !shrink-0 object-contain md:h-5 md:w-5"
             />
             <span className="hidden md:block">Chat with us</span>
           </a>
@@ -107,56 +110,6 @@ function Navbar() {
           </a>
         </button>
       </div>
-    </div>
-  );
-}
-
-function Content() {
-  const { storeLink } = useIsAppleDevice();
-
-  return (
-    <div className="mt-44 flex flex-col items-center justify-center md:mt-[88px]">
-      <div className="w-[388px] space-y-5 md:space-y-2.5">
-        <h1 className="inview-once text-center font-['Geist'] text-[40px] font-semibold leading-[51px] opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:text-[44px]">
-          The Super App for Global Banking
-        </h1>
-        <p className="inview-once mx-auto w-9/12 text-center text-[17px] font-normal leading-[26px] opacity-0 [--slidein-delay:500ms] inview:animate-slidein md:w-auto md:text-sm">
-          Open a US dollar bank account and start sending, receiving, and saving money in minutes.
-        </p>
-      </div>
-      <button className="inview-once mt-7 flex h-[57px] w-[266px] items-center justify-center gap-3 rounded-full bg-white opacity-0 transition-colors duration-500 ease-in-out [--slidein-delay:500ms] hover:border hover:border-orange inview:animate-slidein md:mt-4">
-        <a href={storeLink} className="flex h-full w-full items-center justify-center gap-3">
-          <h3 className="text-mobileBody font-medium text-orange md:text-xl md:!font-semibold">
-            Download <span className="hidden md:inline">App</span>
-            {/* <span className="inline md:hidden">on mobile</span> */}
-          </h3>
-          <div className="flex gap-3">
-            <Image
-              src="/images/landingpage/ios.png"
-              width={22.58}
-              height={22.58}
-              alt="ios"
-              className="shrink-0 object-contain"
-            />
-            <div className="h-7 w-[0.8px] bg-[#d9d9d9]" />
-            <Image
-              src="/images/landingpage/android.png"
-              width={22.58}
-              height={22.58}
-              alt="android"
-              className="shrink-0 object-contain"
-            />
-          </div>
-        </a>
-      </button>
-      <Image
-        src="/images/landingpage/Iphone.png"
-        alt="phone"
-        width={350.51}
-        height={700}
-        className="inview-once !mt-3 hidden object-contain opacity-0 [--slidein-delay:300ms] inview:animate-slidein md:block"
-        priority
-      />
     </div>
   );
 }

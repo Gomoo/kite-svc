@@ -26,9 +26,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <LandingPageHeader />
         {children}
-        <Footer />
         <script
           async
           type="text/javascript"
