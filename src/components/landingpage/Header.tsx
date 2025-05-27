@@ -79,7 +79,7 @@ function Navbar() {
             href={whatsapplink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex h-full w-full items-center justify-center gap-2 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
+            className={`flex h-full w-full items-center justify-center gap-2 px-3 ${isScrolled ? "" : "transition-colors duration-300 ease-in-out group-hover:text-green-500"} `}
           >
             <Image
               alt="whatsapp"
