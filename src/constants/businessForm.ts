@@ -76,6 +76,13 @@ const companyRegistrationForm: CompanyRegistrationForm = [
         required: false,
       },
       {
+        name: "rcNumber",
+        label: "RC Number",
+        type: "input",
+        inputType: "text",
+        required: true,
+      },
+      {
         name: "certificateOfIncorporation",
         label: "Certificate of Incorporation",
         type: "file",
@@ -139,40 +146,40 @@ const companyRegistrationForm: CompanyRegistrationForm = [
       },
     ],
   },
-  {
-    section: "Payment Details",
-    description: "Please provide details on your payment preferences:",
+  // {
+  //   section: "Payment Details",
+  //   description: "Please provide details on your payment preferences:",
 
-    fields: [
-      {
-        name: "tradingCurrencies",
-        label: "Currencies you'd be trading",
-        type: "select",
-        multiple: true,
-        options: [
-          { value: "USD", label: "US Dollar (USD)" },
-          { value: "EUR", label: "Euro (EUR)" },
-          { value: "GBP", label: "British Pound (GBP)" },
-          { value: "NGN", label: "Nigerian Naira (NGN)" },
-          { value: "CAD", label: "Canadian Dollar (CAD)" },
-          { value: "AUD", label: "Australian Dollar (AUD)" },
-          { value: "JPY", label: "Japanese Yen (JPY)" },
-          { value: "CHF", label: "Swiss Franc (CHF)" },
-          { value: "other", label: "Other (please specify)" },
-        ],
-        required: true,
-      },
-      {
-        name: "receivingBankAccountDetails",
-        label: "Receiving Company Bank Account Details (Account where you expect to receive funds)",
-        type: "input",
-        inputType: "textarea",
-        placeholder:
-          "Please provide bank name, account number, routing/sort code, and any other relevant details",
-        required: true,
-      },
-    ],
-  },
+  //   fields: [
+  //     {
+  //       name: "tradingCurrencies",
+  //       label: "Currency you'd be trading",
+  //       type: "select",
+  //       multiple: true,
+  //       options: [
+  //         { value: "USD", label: "US Dollar (USD)" },
+  //         { value: "EUR", label: "Euro (EUR)" },
+  //         { value: "GBP", label: "British Pound (GBP)" },
+  //         { value: "NGN", label: "Nigerian Naira (NGN)" },
+  //         { value: "CAD", label: "Canadian Dollar (CAD)" },
+  //         { value: "AUD", label: "Australian Dollar (AUD)" },
+  //         { value: "JPY", label: "Japanese Yen (JPY)" },
+  //         { value: "CHF", label: "Swiss Franc (CHF)" },
+  //         { value: "other", label: "Other (please specify)" },
+  //       ],
+  //       required: true,
+  //     },
+  //     {
+  //       name: "receivingBankAccountDetails",
+  //       label: "Receiving Company Bank Account Details (Account where you expect to receive funds)",
+  //       type: "input",
+  //       inputType: "textarea",
+  //       placeholder:
+  //         "Please provide bank name, account number, routing/sort code, and any other relevant details",
+  //       required: true,
+  //     },
+  //   ],
+  // },
 ];
 
 // Export for use in applications

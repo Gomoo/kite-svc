@@ -77,7 +77,7 @@ const Steps: React.FC<StepsProps> = ({ children, style = {}, done }) => {
 
   const handleDone = (data?: any): void => {
     if (done) {
-      done(data);
+      done();
     }
     setSlideIndex(0);
   };

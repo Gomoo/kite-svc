@@ -32,14 +32,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { useCreateBusiness, useUploadBusinessDocuments } from "@/hooks/queries/useBusinessForm";
 
 export const formSchema = z.object({
   // Director's Details
-  firstlName: z.string().min(1, "First name is required"),
+  firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
   passportDataPage: z.any(),
   residentialAddress: z.any(),
   roleInCompany: z.string().min(1, "Role is required"),
+  rcNumber: z.string().min(1, "RC Number is required"),
   phoneNumber: z.string().min(1, "Phone number is required"),
   validIdentification: z.any(),
   // Company Details
@@ -54,8 +56,8 @@ export const formSchema = z.object({
   physicalOfficeLocation: z.string().min(1, "Office location is required"),
   companyWebsite: z.string().url().optional(),
   // Payment Details
-  tradingCurrencies: z.array(z.string()).min(1, "Select at least one currency"),
-  receivingBankAccountDetails: z.string().min(1, "Bank details required"),
+  // tradingCurrencies: z.string().min(1, "Select at least one currency"),
+  // receivingBankAccountDetails: z.string().min(1, "Bank details required"),
 });
 
 function Business() {
@@ -64,8 +66,74 @@ function Business() {
     defaultValues: {},
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  const createBusiness = useCreateBusiness();
+  const uploadBusinessDocuments = useUploadBusinessDocuments();
+
+  const getFieldNamesByType = (type: string) => {
+    return companyRegistrationForm
+      .flatMap((section) => section.fields)
+      .filter((field) => field.type === type)
+      .map((field) => field.name);
+  };
+
+  const stringFieldNames = getFieldNamesByType("input").concat(getFieldNamesByType("select"));
+  const fileFieldNames = getFieldNamesByType("file");
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log({ values });
+    const stringPayload = {
+      company_name: values.registeredCompanyName,
+      operational_name: values.operatingName,
+      rc_number: values.rcNumber,
+      country: values.physicalOfficeLocation,
+      state: values.physicalOfficeLocation,
+      address: values.physicalOfficeLocation,
+      lga: values.physicalOfficeLocation,
+      phone: values.phoneNumber,
+      city: values.physicalOfficeLocation,
+      website: values.companyWebsite,
+      ubo_information: {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        phone: values.phoneNumber,
+        role: values.roleInCompany,
+      },
+    };
+
+    const filePayload: Record<string, any> = {};
+    for (const key in values) {
+      if (fileFieldNames.includes(key)) {
+        // @ts-ignore
+        filePayload[key] = values[key];
+      }
+    }
+    try {
+      // @ts-ignore
+      const businessResult = await createBusiness.mutateAsync(stringPayload);
+      console.log({ businessResult });
+      const businessId = businessResult.data?.id;
+      if (!businessId) throw new Error("No businessId returned");
+      await uploadBusinessDocuments.mutateAsync({ businessId, ...filePayload });
+      alert("Business registration successful!");
+      form.reset(
+        {
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          physicalOfficeLocation: "",
+          roleInCompany: "",
+          registeredCompanyName: "",
+          operatingName: "",
+          rcNumber: "",
+          residentialAddress: "",
+          companyWebsite: "",
+        },
+        { keepValues: false },
+      );
+      // window.location.href = "/business";
+    } catch (error: any) {
+      alert(error?.message || "Submission failed");
+    }
   }
 
   return (
@@ -73,8 +141,8 @@ function Business() {
       <Navbar />
       <div className="relative mx-auto mt-36 w-11/12 md:w-10/12 xl:w-6/12">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <StepsContainer2 done={form.handleSubmit}>
+          <div className="space-y-8">
+            <StepsContainer2 done={() => onSubmit(form.getValues())}>
               {companyRegistrationForm.map((section: FormSection, index) => (
                 <FormSection
                   key={index}
@@ -83,10 +151,12 @@ function Business() {
                   form={form}
                   isFirstSection={index === 0}
                   isLastSection={index === companyRegistrationForm.length - 1}
+                  onAction={() => onSubmit(form.getValues())}
+                  isLoading={createBusiness.isPending || uploadBusinessDocuments.isPending}
                 />
               ))}
             </StepsContainer2>
-          </form>
+          </div>
         </Form>
       </div>
     </div>
@@ -199,7 +269,9 @@ interface TSection {
   next?: (pos?: number) => void;
   back?: (pos?: number) => void;
   done?: () => void;
+  onAction?: () => void;
   forceRender?: () => void;
+  isLoading?: boolean;
 }
 
 function FormSection({
@@ -211,8 +283,11 @@ function FormSection({
   next,
   done,
   back,
+  isLoading,
   forceRender,
+  onAction,
 }: TSection) {
+  console.log(form.getValues());
   return (
     <div className="">
       <div className="flex items-center">
@@ -241,22 +316,23 @@ function FormSection({
           Back
         </Button>
         <Button
+          disabled={isLoading}
           onClick={async () => {
-            // Validate this section before proceeding
-
-            // const isValid = await validateSectionFields(form, section.fields);
-            // if (isValid) {
-            if (isLastSection) {
-              // Submit logic here
-            } else if (next) {
-              next(index + 1);
+            const isValid = await validateSectionFields(form, section.fields);
+            console.log(index, isLastSection, done, isValid);
+            if (isValid) {
+              if (isLastSection) {
+                // Submit logic here
+                if (onAction) onAction();
+              } else if (next) {
+                next(index + 1);
+              }
             }
-            // }
             // Optionally, scroll to first error or show a message if not valid
           }}
           className="h-12 rounded-md bg-black px-4 py-2 text-xl font-bold text-white"
         >
-          {isLastSection ? "Submit" : "Next"}
+          {isLoading ? "Submitting..." : isLastSection ? "Submit" : "Next"}
         </Button>
       </div>
     </div>
@@ -346,7 +422,7 @@ function FieldSelector(props: { field_type: string; field: FormField2; form: any
       return (
         <FormField
           control={form.control}
-          name="email"
+          name={formField?.name}
           render={({ field }) => (
             <FormItem className="mx-auto md:w-10/12">
               <FormLabel className="mb-2 font-light md:text-lg">{formField?.label}*</FormLabel>
