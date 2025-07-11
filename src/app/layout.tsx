@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
-import LandingPageHeader from "@/components/landingpage/Header";
-import Footer from "@/components/landingpage/Footer";
+import Providers from "./provider";
 
 export const metadata: Metadata = {
   title: "Kite App",
@@ -26,7 +25,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        {children}
+        <Providers>{children}</Providers>
         <script
           async
           type="text/javascript"
