@@ -34,7 +34,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useCreateBusiness, useUploadBusinessDocuments } from "@/hooks/queries/useBusinessForm";
 
-export const formSchema = z.object({
+const formSchema = z.object({
   // Director's Details
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
