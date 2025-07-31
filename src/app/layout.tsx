@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={`no-scrollbar`}>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MQD3GK9P"
+            src="https://www.googletagmanager.com/ns.html?id=G-T6BLKQ2H5F"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
