@@ -58,12 +58,14 @@ function FAQ() {
         Frequently Asked Questions
       </h3>
 
-      <div className="mt-[46px]">
+      <div className="mt-[46px] px-4">
         <Accordion type="single" collapsible className="w-full" defaultValue="0">
           {qa.map((value, index) => (
             <AccordionItem key={index} value={`${index}`}>
-              <AccordionTrigger className="text-xl !no-underline">{value.q}</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance text-base">
+              <AccordionTrigger className="text-lg !no-underline md:text-xl">
+                {value.q}
+              </AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 md:text-balance md:text-base">
                 <p>{value?.a}</p>
               </AccordionContent>
             </AccordionItem>
