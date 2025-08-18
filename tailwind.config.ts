@@ -105,6 +105,22 @@ const config: Config = {
   				'100%': {
   					transform: 'scale(1)'
   				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
   			}
   		},
   		animation: {
@@ -114,7 +130,9 @@ const config: Config = {
   			slidein700: 'slidein 1s ease 700ms forwards',
   			slidein1000: 'slidein 1s ease 1000ms forwards',
   			scalein: 'scalein 300ms ease-out forwards',
-  			scaleout: 'scaleout 300ms ease-out forwards'
+  			scaleout: 'scaleout 300ms ease-out forwards',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		transitionProperty: {
   			smooth: 'transform, opacity'

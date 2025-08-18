@@ -96,7 +96,7 @@ const link4 = [
 ];
 function Footer() {
   return (
-    <div className="footer mt-[81px] w-full md:mt-[225px] md:h-[536px]">
+    <div className="footer mt-[81px] w-full md:h-[536px]">
       <div className="mx-auto hidden h-[351.85px] pt-[104px] md:block md:w-11/12 xl:w-[1030px]">
         <div className="h-[240px flex">
           <div className="space-y-[69px]">

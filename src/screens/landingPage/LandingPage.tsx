@@ -1,4 +1,5 @@
 "use client";
+import FAQ from "@/components/landingpage/FAQ";
 // import Footer from "@/components/landingpage/Footer";
 import GetAccount from "@/components/landingpage/GetAccount";
 import GetPaid from "@/components/landingpage/GetPaid";
@@ -28,6 +29,7 @@ function LandingPage() {
       </div>
       <MobileTalkToUs />
       {/* <Footer /> */}
+      <FAQ />
     </div>
   );
 }
